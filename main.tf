@@ -17,8 +17,8 @@ module "openstack" {
   image        = "Rocky-8.7-x64-2023-02"
 
   instances = {
-    mgmt   = { type = "p8-15gb", tags = ["puppet", "mgmt", "nfs"], count = 1 }
-    login  = { type = "p4-7.5gb", tags = ["login", "public", "proxy"], count = 1 }
+    mgmt   = { type = "p8-30gb", tags = ["puppet", "mgmt", "nfs"], count = 1 }
+    login  = { type = "p8-30gb", tags = ["login", "public", "proxy"], count = 1 }
     node   = { type = "c16-60gb", tags = ["node"], count = 2 }
   }
 
@@ -30,9 +30,9 @@ module "openstack" {
 
   volumes = {
     nfs = {
-      home     = { size = 1024,type="volumes-ssd"}
-      project  = { size = 1024,type="volumes-ec"}
-      scratch  = { size = 1024,type="volumes-ec"}
+      home     = { size = 4000,type="volumes-ssd"}
+      project  = { size = 3072,type="volumes-ec"}
+      scratch  = { size = 2048,type="volumes-ec"}
     }
   }
 
