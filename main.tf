@@ -30,7 +30,7 @@ module "openstack" {
 
   volumes = {
     nfs = {
-      home     = { size = 4000,type="volumes-ssd"}
+      home     = { size = 3986,type="volumes-ssd"}
       project  = { size = 3072,type="volumes-ec"}
       scratch  = { size = 2048,type="volumes-ec"}
     }
@@ -40,7 +40,7 @@ module "openstack" {
   
   generate_ssh_key = true
 
-  nb_users = 10
+  nb_users = 100
   # Shared password, randomly chosen if blank
   guest_passwd = ""
 }
