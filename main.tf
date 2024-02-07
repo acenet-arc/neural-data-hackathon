@@ -19,7 +19,7 @@ module "openstack" {
   instances = {
     mgmt   = { type = "p8-30gb", tags = ["puppet", "mgmt", "nfs"], count = 1 }
     login  = { type = "p8-30gb", tags = ["login", "public", "proxy"], count = 1 }
-    node   = { type = "c16-60gb", tags = ["node"], count = 36 }
+    node   = { type = "c16-60gb", tags = ["node"], count = 2 }
   }
 
   # var.pool is managed by Slurm through Terraform REST API.
